@@ -1,0 +1,58 @@
+	.contentMain .function{    
+    		padding-left: 24px;
+		    padding-top: 23px;
+		    padding-bottom: 23px;
+		    margin-bottom: 22px;
+    		background: #fff;
+		    }
+		.contentMain .function input[name="add"],input[name="det"],input[name="search"]{
+				outline: none;
+				border: none;
+				background: transparent;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				border: 1px solid #18d659;
+				border-radius: 31px;
+			    width: 100px;
+    			height: 42px;
+    			font: 18px Arial,"Microsoft Yahei";
+			    color: #18d659;
+			    text-indent: 26px;
+			    background-repeat: no-repeat;
+			    background-position-x: 16px;
+    			background-position-y: 11px;
+		}
+		.contentMain .function input[name="add"]{    
+    		background-image: url(../images/DATIANJIALV.png);
+    		}
+    	.contentMain .function input[name="add"]:hover{
+	    	background-image:url(../images/hovadd.png);
+	    	background-position-x: -6px;
+			background-position-y: -3px;
+			color: transparent;
+			cursor: pointer;
+    	}	   
+		.contentMain .function input[name="det"]{    
+			margin-left: 30px;
+    		margin-right: 30px;
+    		background-image: url(../images/SHANCHULV.png);
+    		} 
+    	.contentMain .function input[name="det"]:hover{    
+    		background-image:url(../images/hovdel.png);
+	    	background-position-x: -6px;
+			background-position-y: -3px;
+			color: transparent;
+			cursor: pointer;
+    		} 	
+    	.contentMain .function input[name="search"]{    
+    		background-image: url(../images/SUOSOU-LV.png);
+    		text-indent: 42px;
+    		width: 280px;
+    		}  
+    	/*.contentMain .function input[name="search"]:hover{    
+    		background-image:url(../images/hovsch.png);
+	    	background-position-x: -6px;
+			background-position-y: -3px;
+			color: transparent;
+    		} */

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="title"><p>系统管理/权限管理</p></div>
+    <div class="contentMain">
+    	 <!---------------------------------------添加对话框 start--------------------------------------->
+			<div id="funDialog" title="添加" class="dialog">
+		 		<div class="neirong">
+						<div>
+							<span>项目名称：</span>
+							<input type="text" id="menuName" name="shuru" placeholder="请输入项目名称">
+						</div>
+						<div class="center">
+							<span>项目链接：</span>
+							<input type="text" id="menuUrl" name="shuru" placeholder="请输入项目链接">
+						</div>
+						<div>
+							<span>项目编号：</span>
+							<input type="text" id="projectId" name="shuru" placeholder="请输入项目编号">
+						</div>
+					</div>
+				    <div class="but">
+						<input type="button" value="返回" name='commont' class="ret" onclick="menu.retu()">
+						<input type="button" value="确定" name='commont' class="sure" onclick="menu.sure()">
+					</div>
+        	</div>
+		<!-------------------------------------------The end---------------------------------------------->
+		
+		<!------------------------------------------修改对话框 start-------------------------------------------->
+			<div id="funDialogs" title="修改" class="dialog">
+		 		<input type="hidden" id="edid" name="id" value=""/>
+					<div class="neirong">
+						<div>
+							<span>项目名称：</span>
+							<input type="text" id="editMenuMane" name="shuru" placeholder="请输入要修改的项目名称">
+						</div>
+						<div class="center">
+							<span>项目链接：</span>
+							<input type="text" id="editMenuUrl" name="shuru" placeholder="请输入要修改的项目链接">
+						</div>
+						<div>
+							<span>项目编号：</span>
+							<input type="text" id="editProjectId" name="shuru" placeholder="请输入要修改的项目编号">
+						</div>
+					</div>
+				    <div class="but">
+						<input type="button" value="返回" name='commont' class="ret" onclick="menu.upretu()">
+						<input type="button" value="确定" name='commont' class="sure" onclick="menu.upda()">
+					</div>
+        	</div>
+		<!----------------------------------------------The end--------------------------------------------->
+    	
+        <!-------------------------------添加、删除、搜索按钮 start-------------------------------------->
+        <div class="function">
+			<input type="button" id="add" name="add" value="添加" onclick="menu.add()">
+			<input type="button" id="add" name="det" value="删除" onclick="menu.del()">
+			<input type="text" id="add" name="search" placeholder="搜索" >
+		</div>
+		<!------------------------------------The end---------------------------------------------->
+        <div class="contentCon">
+            <table class="table table-bordered">
+                <!--<caption>边框表格布局</caption>-->
+                <thead>
+                    <tr>
+                    	<th>项目Id</th>
+                        <th>项目名称</th>   
+                        <th>项目链接</th>
+                        <th>项目编号</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody class="operaTable">
+
+                </tbody>
+            </table>
+        </div>
+
+	</div>
+	<script type="text/javascript" src="js/funManger.js" ></script>
+
+</body>
+</html>
+

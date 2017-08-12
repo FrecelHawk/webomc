@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/login.css">
+		<style>
+			html{background-repeat: no-repeat;background-size: cover;width: 100%;height: 100%;}
+			@media screen and (min-width: 1680px) and (max-width: 1920px) {
+				html{background-image: url(images/beijing-1366.png)}
+			}
+			@media screen and (min-width: 1366px) and (max-width: 1680px) {
+				html{background-image: url(images/beijing-1680.png)}
+			}
+			@media screen and (max-width: 1366px) {
+				html{background-image: url(images/beijing-1366.png)}
+			}			
+		</style>
+	</head>
+	<body>
+		<div class="contaier">
+			<div class="logo">
+				<img src="images/logo.png">
+			</div>
+			<div class="login">
+				<div class="useName">
+					<span class="zh">账号：</span>
+					<div class="comStyle">
+						<input type="text" id="usename" name='commont' autocomplete="on" placeholder="请输入账号" >
+						<img src="images/sanjiao.png" class="iconCom">
+					</div>
+				</div>
+				<div class="password">
+					<span class="zh">密码：</span>
+					<!---暗文密码--->
+					<div class="comStyle" id="pwdInvisible">
+						<input type="password" id="passpwd" name='commont' placeholder="请输入密码">
+						<img src="images/yanjing.png" class="iconCom" onclick="showPwd()">
+					</div>
+					<!--明文密码--->
+					<div class="comStyle" id="pwdVisible" style="display: none;">
+						<input type="text" id="textpwd" name='commont' placeholder="请输入密码">
+						<img src="images/yanjing.png" class="iconCom" onclick="hidePwd()">
+					</div>
+				</div>
+				<div class="num">
+					<span class="zh">验证码：</span>
+					<input type="text" id="code" name="code" placeholder="请输入验证码">
+					<img src="http://testflow.aociaol.com/auth_code" onclick="getCode()" class="passCode">
+				</div>
+				<p class="rember">
+					<input type="checkbox" name="remb" id="check">
+					<span class="spanRe">记住用户名</span>
+				</p>
+				<p class="sure">
+					<input type="button" value="登陆" name="sure" id="login" onclick="Login()" >
+				</p>
+			</div>
+		</div>
+			<script src="../public/js/jquery-1.11.3.js"></script>
+			<script type="text/javascript" src="js/login.js"></script>
+		</div>
+	</body>
+</html>
+

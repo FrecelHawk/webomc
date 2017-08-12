@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="title"><p>系统管理/权限管理</p></div>
+    <div class="contentMain">
+    	 <!---------------------------------------添加对话框 start--------------------------------------->
+			 <div id="rootDialog" title="添加" class="dialog">
+	            <div class="neirong">
+	                <div>
+						<span>用户名称：</span>
+						<input type="text" id="master" name="shuru" placeholder="请输入用户名称">
+					</div>
+					<div class="center">
+						<span>项目名称：</span>
+						<input type="text" id="priMasVal" name="shuru" placeholder="请输入项目名称">
+					</div>
+					<div class="center">
+						<span>访问权限：</span>
+						<input type="text" id="access" name="shuru" placeholder="请输入访问权限">
+					</div>
+					<div>
+						<span>操作权限：</span>
+						<input type="text" id="opera" name="shuru" placeholder="请输入操作权限">
+					</div>
+	            </div>
+	            <div class="but">
+	               <input type="button" value="返回" name='commont' class="ret" onclick="oper.retu()">
+					<input type="button" value="确定" name='commont' class="sure" onclick="oper.sure()">
+	            </div>
+        	</div>
+		<!-------------------------------------------The end---------------------------------------------->
+		
+		<!------------------------------------------修改对话框 start-------------------------------------------->
+			<div id="rootDialogs" title="修改" class="dialog">
+				<input type="hidden" id="edid" name="id" value=""/>
+	            <div class="neirong">
+	               <div>
+						<span>用户名称：</span>
+						<input type="text" id="editMaster" name="shuru" placeholder="请输入要修改的用户名称">
+					</div>
+					<div class="center">
+						<span>项目名称：</span>
+						<input type="text" id="editVal" name="shuru" placeholder="请输入要修改的项目名称">
+					</div>
+					<div class="center">
+						<span>访问权限：</span>
+						<input type="text" id="editAccess" name="shuru" placeholder="请输入要修改的访问权限">
+					</div>
+					<div>
+						<span>操作权限：</span>
+						<input type="text" id="editOpera" name="shuru" placeholder="请输入要修改的操作权限">
+					</div>
+				</div>
+			    <div class="but">
+					<input type="button" value="返回" name='commont' class="ret" onclick="oper.upretu()">
+					<input type="button" value="确定" name='commont' class="sure" onclick="oper.upda()">
+				</div>
+        	</div>
+		<!----------------------------------------------The end--------------------------------------------->
+    	
+        <!-------------------------------添加、删除、搜索按钮 start-------------------------------------->
+        <div class="function">
+			<input type="button" id="add" name="add" value="添加" onclick="oper.add()">
+			<input type="button" id="add" name="det" value="删除" onclick="oper.del()">
+			<input type="text" id="add" name="search" placeholder="搜索" >
+		</div>
+		<!------------------------------------The end---------------------------------------------->
+        <div class="contentCon">
+            <table class="table table-bordered">
+                <!--<caption>边框表格布局</caption>-->
+                <thead>
+                    <tr>
+                    	<th>用户Id</th>
+                        <th>用户名称</th>
+                        <th>项目名称</th>
+                        <th>访问权限</th>
+                        <th>操作权限</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody class="operaTable">
+
+                </tbody>
+            </table>
+        </div>
+
+   </div>
+   <script type="text/javascript" src="js/rooManger.js" ></script> 
+</body>
+</html>
