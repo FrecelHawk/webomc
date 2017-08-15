@@ -75,6 +75,7 @@ $(function () {
     self = {
         reload: function (name,url) {
             $(name).load(url);
+            debugger;
         },
         del: function () {
             if(confirm("确定要删除所选项目？")) {
