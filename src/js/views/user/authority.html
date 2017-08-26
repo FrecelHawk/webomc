@@ -1,0 +1,326 @@
+<style>
+    .left_menu{
+    }
+</style>
+<link rel="stylesheet" href="plugs/ztree/zTreeStyle/zTreeStyle.css" />
+<link rel="stylesheet" href="plugs/ztree/metroStyle/metroStyle.css">
+
+<div class="row">
+<div class="col-md-2">
+    <div class="left_menu">
+        <div class="panel panel-green">
+            <div class="panel-heading">权限菜单</div>
+            <div class="panel-body">
+                <div class="zTreeDemoBackground left">
+                    <ul id="treeDemo" class="ztree"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="col-md-10">
+    <div class="content">
+        <div class="panel panel-green">
+            <div class="panel-heading">查询内容</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <select class="form-control select select-primary select-block">
+                            <option value="one">手机号码</option>
+                            <option value="three">用户名称</option>
+                        </select>
+
+                    </div>
+                    <div class="col-md-2" style="margin-left: 50px;">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" id="search-query-3">
+                            <span class="input-group-btn">
+                        <button type="submit" class="btn"><span class="fui-search"></span></button>
+                      </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-green" >
+            <div class="panel-heading"><i class="fa fa-align-justify" style="margin-right: 10px;"></i>数据列表
+                <div class="table_operation_btn">
+                    <span class="table_operation_btn_span create"> <i class="fa fa-plus"></i>&nbsp;添加</span>
+                    <span class="table_operation_btn_span" style="display: none;"><i class="fa fa-pencil"></i>&nbsp;修改</span>
+                    <span class="table_operation_btn_span refresh"><i class="fa  fa-refresh"></i>&nbsp;刷新</span>
+                </div>
+            </div>
+            <div>
+                <table id="table"
+                       data-click-to-select="true"
+                >
+                    <thead>
+                    <tr>
+                        <th data-field="state" data-checkbox="true"></th>
+                        <th data-field="id">用户ID</th>
+                        <th data-field="login_name">用户名称</th>
+                        <th data-field="email">用户邮箱</th>
+                        <th data-field="phone">手机号码</th>
+                        <th data-field="last_login_time">最后登陆时间</th>
+                        <th data-field="last_login_ip">最后登陆IP</th>
+                        <th data-field="action"
+                            data-align="center"
+                            data-formatter="actionFormatter"
+                            data-events="actionEvents">操作</th>
+                    </tr>
+                    </thead>
+                </table>
+
+                <div style="float: right">
+                    <ul class="pagination">
+                        <li class="previous">
+                            <a href="#" class="fui-arrow-left"></a>
+                        </li>
+
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+
+                        <!-- Make dropdown appear above pagination -->
+                        <li class="pagination-dropdown dropup">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fui-triangle-up"></i>
+                            </a>
+                            <!-- Dropdown menu -->
+                            <ul class="dropdown-menu">
+                                <li>
+                                <li><a href="#fakelink">10–20</a></li>
+                                <li><a href="#fakelink">20–30</a></li>
+                                <li><a href="#fakelink">40–50</a></li>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="next">
+                            <a href="#" class="fui-arrow-right"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+<div id="modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>用户名称</label>
+                    <input type="text" class="form-control" name="login_name" placeholder="用户名">
+                </div>
+                <div class="form-group">
+                    <label>用户邮箱</label>
+                    <input type="text" class="form-control" name="email" placeholder="用户邮箱">
+                </div>
+                <div class="form-group">
+                    <label>手机号码</label>
+                    <input type="number" class="form-control" name="phone" placeholder="手机号码">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary submit">提交</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<script>
+    $("select").select2({dropdownCssClass: 'dropdown-inverse'});
+</script>
+<script>
+    var $table = $('#table'),
+        $button = $('#button');
+
+    $(function () {
+        $button.click(function () {
+            $table.bootstrapTable('append', randomData());
+            $table.bootstrapTable('scrollTo', 'bottom');
+        });
+    });
+
+    function randomData() {
+        var startId = ~~(Math.random() * 100),
+            rows = [];
+
+        for (var i = 0; i < 10; i++) {
+            rows.push({
+                id: startId + i,
+                name: 'test' + (startId + i),
+                price: '$' + (startId + i)
+            });
+        }
+        return rows;
+    }
+</script>
+<script>
+    // var API_URL = 'http://' + location.host + ':3001/list';
+    var API_URL = 'http://127.0.0.1:3001/users/';
+    var $table = $('#table').bootstrapTable({url: API_URL}),
+        $modal = $('#modal').modal({show: false}),
+        $alert = $('.alert').hide();
+
+    $(function () {
+        // create event
+        $('.create').click(function () {
+            showModal($(this).text());
+        });
+
+        $('.refresh').click(function(){
+            $table.bootstrapTable('refresh');
+        });
+
+        $('.removeAll').click(function(){
+            alert('getSelections: ' + JSON.stringify($table.bootstrapTable('getSelections')));
+        });
+
+
+
+        $modal.find('.submit').click(function () {
+            var row = {};
+
+            $modal.find('input[name]').each(function () {
+                row[$(this).attr('name')] = $(this).val();
+            });
+
+            $.ajax({
+                url: API_URL + ($modal.data('id') || ''),
+                type: $modal.data('id') ? 'put' : 'post',
+                contentType: 'application/json',
+                data: JSON.stringify(row),
+                success: function () {
+                    $modal.modal('hide');
+                    $table.bootstrapTable('refresh');
+                    showAlert(($modal.data('id') ? 'Update' : 'Create') + ' item successful!', 'success');
+                },
+                error: function () {
+                    $modal.modal('hide');
+                    showAlert(($modal.data('id') ? 'Update' : 'Create') + ' item error!', 'danger');
+                }
+            });
+        });
+    });
+
+    function actionFormatter(value) {
+        return [
+            '<a class="update" href="javascript:" title="修改用户"><i class="fa fa-pencil"></i></a>',
+            '<a class="remove" href="javascript:" title="删除用户">&nbsp;<i class="fa fa-minus"></i></a>',
+        ].join('');
+    }
+
+    // update and delete events
+    window.actionEvents = {
+        'click .update': function (e, value, row) {
+            showModal($(this).attr('title'), row);
+        },
+        'click .remove': function (e, value, row) {
+            if (confirm('Are you sure to delete this item?')) {
+                $.ajax({
+                    url: API_URL + row.id,
+                    type: 'delete',
+                    success: function () {
+                        $table.bootstrapTable('refresh');
+                        showAlert('Delete item successful!', 'success');
+                    },
+                    error: function () {
+                        showAlert('Delete item error!', 'danger');
+                    }
+                })
+            }
+        }
+    };
+
+    function showModal(title, row) {
+        row = row || {
+                id: '',
+                login_name: '',
+                email: '',
+                phone: 0
+            }; // default row value
+
+        $modal.data('id', row.id);
+        $modal.find('.modal-title').text(title);
+        for (var name in row) {
+            $modal.find('input[name="' + name + '"]').val(row[name]);
+        }
+        $modal.modal('show');
+    }
+
+    function showAlert(title, type) {
+        $alert.attr('class', 'alert alert-' + type || 'success')
+            .html('<i class="glyphicon glyphicon-check"></i> ' + title).show();
+        setTimeout(function () {
+            $alert.hide();
+        }, 3000);
+    }
+</script>
+<script type="text/javascript">
+    var setting = {
+        view: {
+            selectedMulti: false
+        },
+        check: {
+            enable: true
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        }
+
+    };
+
+    var zNodes =[
+        { id:1, pId:0, name:"父节点1", open:true},
+        { id:11, pId:1, name:"父节点11"},
+        { id:111, pId:11, name:"叶子节点111"},
+        { id:112, pId:11, name:"叶子节点112"},
+        { id:113, pId:11, name:"叶子节点113"},
+        { id:114, pId:11, name:"叶子节点114"},
+        { id:12, pId:1, name:"父节点12"},
+        { id:121, pId:12, name:"叶子节点121"},
+        { id:122, pId:12, name:"叶子节点122"},
+        { id:123, pId:12, name:"叶子节点123"},
+        { id:124, pId:12, name:"叶子节点124"},
+        { id:13, pId:1, name:"父节点13", isParent:true},
+        { id:2, pId:0, name:"父节点2"},
+        { id:21, pId:2, name:"父节点21", open:true},
+        { id:211, pId:21, name:"叶子节点211"},
+        { id:212, pId:21, name:"叶子节点212"},
+        { id:213, pId:21, name:"叶子节点213"},
+        { id:214, pId:21, name:"叶子节点214"},
+        { id:22, pId:2, name:"父节点22"},
+        { id:221, pId:22, name:"叶子节点221"},
+        { id:222, pId:22, name:"叶子节点222"},
+        { id:223, pId:22, name:"叶子节点223"},
+        { id:224, pId:22, name:"叶子节点224"},
+        { id:23, pId:2, name:"父节点23"},
+        { id:231, pId:23, name:"叶子节点231"},
+        { id:232, pId:23, name:"叶子节点232"},
+        { id:233, pId:23, name:"叶子节点233"},
+        { id:234, pId:23, name:"叶子节点234"},
+        { id:3, pId:0, name:"父节点3", isParent:true}
+    ];
+
+    $(document).ready(function(){
+        $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+    });
+
+</script>

@@ -1,0 +1,36 @@
+
+.main_content {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.panel-green {
+    border-color: #2ecc71;
+}
+
+.panel-green > .panel-heading {
+    border-color: #2ecc71;
+    color: #fff;
+    background-color: #1abc9c;
+}
+
+.panel-green > a {
+    color: #2ecc71;
+}
+
+.panel-green > a:hover {
+    color: #3d8b3d;
+}
+
+.table_operation_btn_span{
+    margin-left: 20px;
+}
+.table_operation_btn{
+    float:right;
+}
+
+.panel-green{
+    margin-left: 20px;
+    margin-right: 20px;
+}

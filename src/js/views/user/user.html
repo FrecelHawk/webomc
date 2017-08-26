@@ -1,0 +1,98 @@
+<div  class="title"><p>{{title}}</p></div>
+<div class="contentMain">
+    <!---------------------------------------添加对话框 start--------------------------------------->
+    <div id="userDialog" title="添加" class="dialog">
+        <div class="neirong">
+            <div>
+                <span>登录名：</span>
+                <input type="text" class="userName" name="shuru" ng-model="loginName">
+            </div>
+            <div class="center">
+                <span>登录密码：</span>
+                <input type="password" class="userPassword" name="shuru" ng-model="loginPwd">
+            </div>
+            <div class="center">
+                <span>用户名：</span>
+                <input type="text" class="userHu" name="shuru" ng-model="userName">
+            </div>
+            <div class="center">
+                <span>手机：</span>
+                <input type="text" class="userPhone" name="shuru" ng-model="phone">
+            </div>
+            <div class="center">
+                <span>商业1：</span>
+                <input type="text" class="businessId" name="shuru" ng-model="business">
+            </div>
+            <div>
+                <span>用户类型：</span>
+                <input type="radio" checked name="user" id="general" /><label for="general">普通用户</label>
+                <input type="radio" name="user" id="admin" /><label for="admin">管理员</label>
+            </div>
+        </div>
+        <div class="but">
+            <input type="button" value="返回" name='commont' class="ret"  ng-click="back()">
+            <input type="button" value="确定" name='commont' class="sure" ng-click="save()">
+        </div>
+    </div>
+    <!-------------------------------------------The end---------------------------------------------->
+    <div id="changeDialog" title="修改" class="dialog">
+        <div class="neirong">
+            <div>
+                <span>登录名：</span>
+                <input type="text" class="userName" name="shuru">
+            </div>
+            <div class="center">
+                <span>登录密码：</span>
+                <input type="password" class="userPassword" name="shuru">
+            </div>
+            <div class="center">
+                <span>用户名：</span>
+                <input type="text" class="userHu" name="shuru">
+            </div>
+            <div class="center">
+                <span>手机：</span>
+                <input type="text" class="userPhone" name="shuru">
+            </div>
+            <div>
+                <span>商业1：</span>
+                <input type="text" class="businessId" name="shuru">
+            </div>
+            <!--<div>-->
+            <!--<span>商业2：</span>-->
+            <!--<input type="text" class="businessKey" name="shuru">-->
+            <!--</div>-->
+        </div>
+        <div class="but">
+            <input type="button" value="返回" name='commont' class="ret" ng-click="back(test)">
+            <input type="button" value="确定" name='commont' class="sure" onclick="self.changeSure()">
+        </div>
+    </div>
+    <!-------------------------------添加、删除、搜索按钮 start-------------------------------------->
+    <div class="function">
+        <!--<input type="button" name="add" value="添加" ng-click="add()" >-->
+        <input type="button" name="add" value="添加" open_dialog="#userDialog" ng-click="open()">
+        <input type="button" name="det" value="删除" ng-click="update()">
+        <input type="text" name="search" placeholder="搜索" >
+    </div>
+    <!------------------------------------The end---------------------------------------------->
+    <div class="contentCon">
+        <table class="table table-bordered">
+            <!--<caption>边框表格布局</caption>-->
+            <thead>
+            <tr>
+                <th>用户ID</th>
+                <th>登录名</th>
+                <th>姓名</th>
+                <th>手机号码</th>
+                <th>商业1</th>
+                <th>商业2</th>
+                <th>用户类型</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody class="userTable">
+
+            </tbody>
+        </table>
+    </div>
+</div>

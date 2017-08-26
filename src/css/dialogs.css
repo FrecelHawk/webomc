@@ -1,0 +1,76 @@
+#box,#boxs{position:absolute;
+	       	width: 460px;
+	       	border: 1px solid #BFBFBF;
+	       	border-radius: 8px;
+	       	left: 50%;
+	       	margin-left: -230px;
+	       	top: 50%;
+	       	margin-top: -50px;
+	       	display: none;
+	       	}
+		#tuo,#tuos{
+			width: 100%;
+			font: 18px Arial,"Microsoft Yahei";
+			background: #18D659;
+			height: 46px;
+			line-height: 46px;
+			display: block;
+			text-indent: 24px;
+			color: #fff;
+			-webkit-border-top-right-radius:8px;
+			-webkit-border-top-left-radius: 8px;
+			}
+		.dialogs{
+				padding-top: 1px;
+	    		background: #fff;
+	    		-webkit-border-bottom-left-radius: 8px;
+	    		-webkit-border-bottom-right-radius: 8px;
+	    	}
+		    .dialogs .tit span{
+		    	margin-left: 24px;
+		    	line-height: 54px;
+		    }
+		    .dialogs .neirong{
+		    	margin:24px 36px;
+		    }
+		    .dialogs .neirong span{
+		    	font-size: 16px;
+		    	display: block;
+			    width: 96px;
+			    float: left;
+			    height: 30px;
+			    line-height: 30px;
+		    }
+		    
+		    .dialogs .but{
+		    	padding-bottom: 24px;
+   				padding-top: 18px;
+		    }
+		    .dialogs .but input[name="commont"]{
+		    	width: 100px;
+		    	height: 42px;
+		    	color: #18D659;
+		    	border-color: #18D659;
+		    	background: #fff;
+		    	font: 20px Arial,"Microsoft Yahei";
+		    	font-weight: bold;
+		    	border-radius: 20px;
+		    	border: 1px solid #18D659;
+		    }
+		    .dialogs .but .ret{
+		    	margin-right: 20px;
+		    	margin-left: 118px;
+		    }
+		    .dialogs .neirong span{font: "微软雅黑";}
+		    .dialogs .neirong input[name="shuru"]{
+		    	width: 256px;
+    			border-radius: 4px;
+			    border: 1px solid #bfbfbf;
+			    outline: none;
+			    height: 30px;
+			    text-indent: 10px;
+		    }
+		    .dialogs .neirong .center{
+		    	margin-top: 24px;
+		    	margin-bottom: 24px;
+		    }

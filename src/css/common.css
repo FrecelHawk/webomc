@@ -1,0 +1,306 @@
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img {border:0; }
+img{display: block;}
+ul, li,ol { list-style:none; }
+body {font:12px "微软雅黑";}
+a{text-decoration:none; }
+a:hover{
+    text-decoration:none;
+}
+a:active{
+    text-decoration:none;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+:focus{
+    outline: 0;
+}
+input{padding: 0;margin: 0;border: 1px solid #D4D4D4;
+    border-radius: 4px;}
+.clearfix:after{content:".";clear:both;display:block;height:0;overflow:hidden;visibility:hidden;}
+
+.clear{
+    clear: both;
+}
+@media (min-width: 1680px){
+    .headerLogo .logo{
+        width: 362px;
+        background-position:112px 20px;
+    }
+    .headerLogo .xiTong{
+        width: 200px;
+    }
+    .headerLogo .liuLang{
+        width: 200px;
+    }
+    .headerLogo .ziZhi{
+        width: 200px;
+    }
+    .headerLogo .shuJu{
+        width: 200px;
+    }
+    .main .leftList{
+        width: 362px;
+    }
+}
+@media (min-width: 1366px) and (max-width: 1680px) {
+    .headerLogo .logo{
+        width: 318px;
+        background-position: 98px 20px;
+    }
+    .headerLogo .xiTong{
+        width: 160px;
+    }
+    .headerLogo .liuLang{
+        width: 160px;
+    }
+    .headerLogo .ziZhi{
+        width: 160px;
+    }
+    .headerLogo .shuJu{
+        width: 160px;
+    }
+    .main .leftList{
+        width: 318px;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .headerLogo .logo{
+        width: 254px;
+        background-position: 74px 20px;
+    }
+    .headerLogo .xiTong{
+        width: 138px;
+    }
+    .headerLogo .liuLang{
+        width: 138px;
+    }
+    .headerLogo .ziZhi{
+        width: 138px;
+    }
+    .headerLogo .shuJu{
+        width: 138px;
+    }
+    .main .leftList{
+        width: 254px;
+    }
+}
+
+header{
+    width: 100%;
+    height: 84px;
+    background: url("../images/yetoubeijing.png") no-repeat;
+}
+header .left{
+    float: right;
+    color: #ffffff;
+    font-size: 14px;
+    height: 100%;
+}
+.headerLogo{
+    height: 100%;
+    float: left;
+}
+.headerLogo li{
+    height: 100%;
+    float: left;
+    color: #fff;
+    font-size: 18px;
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    line-height: 120px;
+}
+.headerLogo .yin:hover{
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+.headerShadow{
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+.headerLogo .logo{
+    background-image: url("../images/logotou.png");
+    background-repeat: no-repeat;
+}
+.headerLogo .xiTong{
+    cursor: pointer;
+    background: url("../images/xitongguanli.png") no-repeat center 20px;
+}
+.headerLogo .liuLang{
+    cursor: pointer;
+    background: url("../images/liuliangkongzhi.png") no-repeat center 20px;
+}
+.headerLogo .ziZhi{
+    cursor: pointer;
+    background: url("../images/ziyuanguanli.png") no-repeat center 20px;
+}
+.headerLogo .shuJu{
+    cursor: pointer;
+    background: url("../images/shuju.png") no-repeat center 20px;
+}
+.headerName{
+    font-size: 16px !important;
+}
+.headerName div{
+    float: left;
+}
+.headerIco{
+    margin-top: 18px;
+    width: 48px;
+    height: 48px;
+    /*
+    border: 1px solid #18d559;
+    */
+    /*border-radius: 48px;*/
+    background: url("../images/tu.png") no-repeat;
+}
+.headerName .myName{
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    padding: 0 24px 0 16px;
+    background: url("../images/sanjiaoshang.png") no-repeat center right;
+}
+.nameBack{
+    background: url("../images/sanjiaoxia.png") no-repeat center right !important;
+}
+.headerName .myName p{
+    line-height: 84px;
+}
+.nameSet{
+    position: absolute;
+    width: 94px;
+    background: #18d659;
+    border-radius: 8px;
+}
+.nameSet li a{
+    display: block;
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+}
+.headerHelp{
+    cursor: pointer;
+    width: 84px;
+    margin-left: 12px;
+    background: url("../images/bangzhu.png") no-repeat center 16px;
+    text-align: center;
+    line-height: 130px;
+}
+.headerHelp:hover{
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+.headerSet{
+    cursor: pointer;
+    margin-right: 34px;
+    width: 84px;
+    background: url("../images/shezhi.png") no-repeat center 16px;
+    text-align: center;
+    line-height: 130px;
+}
+.headerSet:hover{
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.main{
+    display: flex;
+}
+.main .leftList{
+    float: left;
+    background: #fff;
+    min-height: 600px;
+}
+.main .leftList li{
+    width: 100%;
+    text-align: center;
+}
+.listA{
+    background: url("../images/huisanjian.png") no-repeat 80% center !important;
+}
+.main .leftList .mu a{
+    display: block;
+    color: #333;
+    width: 100%;
+    font-size: 24px;
+    line-height: 46px;
+    background: url("../images/huisanjian.png") no-repeat 80% center;
+}
+.main .leftList .mu a:hover{
+    background: url("../images/lvsanjiao.png") no-repeat 80% center;
+}
+.addColor{
+    background: #3cca6d;
+    color: #fff;
+}
+.tu{
+    background: url("../images/lvsanjiao.png") no-repeat 80% center !important;
+}
+.main .leftList .mu ul li{
+    font-size: 18px;
+    line-height: 46px;
+    cursor: pointer;
+}
+.main .leftList li ul{
+    display: none;
+}
+.main .content{
+    float: left;
+    flex: 1;
+    min-height: 600px;
+    background: #f2f2f3;
+}
+.main .content .title{
+    background: #ffffff;
+    height: 64px;
+    width: 100%;
+    line-height: 64px;
+    font-size: 20px;
+}
+.main .content .title p{
+    border-left: 1px solid #f2f2f3;
+    padding-left: 20px;
+}
+.main .content .contentMain{
+    height: 654px;
+    margin:22px;
+}
+
+/*-----user----*/
+.contentButton{
+    height: 90px;
+    line-height: 90px;
+    background: #ffffff;
+    margin-bottom: 22px;
+}
+.contentCon{
+    background: #ffffff;
+}
+.contentCon table tr td input{
+    margin-right: 10px;
+}
+.tab7 div span{
+    color: #3cca6d;
+    cursor: pointer;
+}
+.tab7 div .change{
+    margin-right: 10px;
+
+}
+#admin{
+    margin-left: 20px;
+}
+
+input[name="comme"]{
+	outline: none;
+	background: transparent;
+	border: none;
+	color: #18D559;
+}
+td,th{text-align: center;}
+
+

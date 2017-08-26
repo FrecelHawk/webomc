@@ -1,0 +1,153 @@
+{
+  message: "菜单列表",
+  statusCode: 200,
+p  data: [
+    {
+      id: 1,
+      pid: 0,
+      name: "",
+      title: "系统设置",
+      type: 0,
+      url: "/index/index/index.html",
+      child: [
+        {
+          id: 3,
+          pid: 1,
+          name: "",
+          title: "用户管理",
+          type: 0,
+          url: "/index/index/index.html",
+          child: [
+            {
+              id: 6,
+              pid: 3,
+              name: "",
+              title: "用户管理",
+              type: 0,
+              url: "/index/index/index.html",
+              child: [
+                {
+                  id: 7,
+                  pid: 6,
+                  name: "index/User/index",
+                  title: "用户列表",
+                  type: 0,
+                  url: "/index/user/index.html",
+                  child: [
+                    {
+                      id: 13,
+                      pid: 7,
+                      name: "index/User/delUser",
+                      title: "删除用户",
+                      type: 0,
+                      url: "/index/user/deluser.html"
+                    },
+                    {
+                      id: 12,
+                      pid: 7,
+                      name: "index/User/updUser",
+                      title: "修改用户",
+                      type: 0,
+                      url: "/index/user/upduser.html",
+                      child: [
+                        {
+                          id: 15,
+                          pid: 12,
+                          name: "index/User/uploadAvatar",
+                          title: "上传头像",
+                          type: 0,
+                          url: "/index/user/uploadavatar.html"
+                        }
+                      ]
+                    },
+                    {
+                      id: 11,
+                      pid: 7,
+                      name: "index/User/addUser",
+                      title: "添加用户",
+                      type: 0,
+                      url: "/index/user/adduser.html"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 2,
+          pid: 1,
+          name: "",
+          title: "权限管理",
+          type: 0,
+          url: "/index/index/index.html"
+        }
+      ]
+    },
+    {
+      id: 16,
+      pid: 4,
+      name: "index/Auth/userGroupList",
+      title: "用户组列表",
+      type: 0,
+      url: "/index/auth/usergrouplist.html",
+      child: [
+        {
+          id: 17,
+          pid: 16,
+          name: "index/Auth/addUserGroup",
+          title: "添加用户组",
+          type: 0,
+          url: "/index/auth/addusergroup.html"
+        },
+        {
+          id: 18,
+          pid: 16,
+          name: "index/Auth/updUserGroup",
+          title: "修改用户组",
+          type: 0,
+          url: "/index/auth/updusergroup.html"
+        }
+      ]
+    },
+    {
+      id: 5,
+      pid: 4,
+      name: "index/Auth/ruleList",
+      title: "权限列表",
+      type: 0,
+      url: "/index/auth/rulelist.html",
+      child: [
+        {
+          id: 10,
+          pid: 5,
+          name: "index/Auth/delRule",
+          title: "删除权限",
+          type: 0,
+          url: "/index/auth/delrule.html"
+        },
+        {
+          id: 9,
+          pid: 5,
+          name: "index/Auth/updRule",
+          title: "修改权限",
+          type: 0,
+          url: "/index/auth/updrule.html"
+        },
+        {
+          id: 8,
+          pid: 5,
+          name: "index/Auth/addRule",
+          title: "添加权限",
+          type: 0,
+          url: "/index/auth/addrule.html"
+        }
+      ]
+    }
+  ],
+  forward: "",
+  forwardConfirm: "",
+  tabid: "",
+  dialogid: "",
+  closeCurrent: false
+}
