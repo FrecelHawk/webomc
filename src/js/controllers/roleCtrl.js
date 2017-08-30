@@ -101,7 +101,7 @@ define(['app','jquery'],function(app,$){
                    $alert.hide();
                }, 3000);
            }
-       }
+       };
 
        $scope.initTable();
     }]);

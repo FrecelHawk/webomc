@@ -170,10 +170,10 @@ header .left{
     line-height: 84px;
 }
 .nameSet{
-    position: absolute;
-    width: 94px;
+    position: relative;
     background: #18d659;
     border-radius: 8px;
+    top:-18px;
 }
 .nameSet li a{
     display: block;
@@ -302,5 +302,7 @@ input[name="comme"]{
 	color: #18D559;
 }
 td,th{text-align: center;}
-
+.headerNavi {
+    float:left;
+}
 

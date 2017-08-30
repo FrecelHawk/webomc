@@ -1,98 +1,111 @@
-<div  class="title"><p>{{title}}</p></div>
-<div class="contentMain">
-    <!---------------------------------------添加对话框 start--------------------------------------->
-    <div id="userDialog" title="添加" class="dialog">
-        <div class="neirong">
-            <div>
-                <span>登录名：</span>
-                <input type="text" class="userName" name="shuru" ng-model="loginName">
-            </div>
-            <div class="center">
-                <span>登录密码：</span>
-                <input type="password" class="userPassword" name="shuru" ng-model="loginPwd">
-            </div>
-            <div class="center">
-                <span>用户名：</span>
-                <input type="text" class="userHu" name="shuru" ng-model="userName">
-            </div>
-            <div class="center">
-                <span>手机：</span>
-                <input type="text" class="userPhone" name="shuru" ng-model="phone">
-            </div>
-            <div class="center">
-                <span>商业1：</span>
-                <input type="text" class="businessId" name="shuru" ng-model="business">
-            </div>
-            <div>
-                <span>用户类型：</span>
-                <input type="radio" checked name="user" id="general" /><label for="general">普通用户</label>
-                <input type="radio" name="user" id="admin" /><label for="admin">管理员</label>
-            </div>
-        </div>
-        <div class="but">
-            <input type="button" value="返回" name='commont' class="ret"  ng-click="back()">
-            <input type="button" value="确定" name='commont' class="sure" ng-click="save()">
-        </div>
-    </div>
-    <!-------------------------------------------The end---------------------------------------------->
-    <div id="changeDialog" title="修改" class="dialog">
-        <div class="neirong">
-            <div>
-                <span>登录名：</span>
-                <input type="text" class="userName" name="shuru">
-            </div>
-            <div class="center">
-                <span>登录密码：</span>
-                <input type="password" class="userPassword" name="shuru">
-            </div>
-            <div class="center">
-                <span>用户名：</span>
-                <input type="text" class="userHu" name="shuru">
-            </div>
-            <div class="center">
-                <span>手机：</span>
-                <input type="text" class="userPhone" name="shuru">
-            </div>
-            <div>
-                <span>商业1：</span>
-                <input type="text" class="businessId" name="shuru">
-            </div>
-            <!--<div>-->
-            <!--<span>商业2：</span>-->
-            <!--<input type="text" class="businessKey" name="shuru">-->
-            <!--</div>-->
-        </div>
-        <div class="but">
-            <input type="button" value="返回" name='commont' class="ret" ng-click="back(test)">
-            <input type="button" value="确定" name='commont' class="sure" onclick="self.changeSure()">
-        </div>
-    </div>
-    <!-------------------------------添加、删除、搜索按钮 start-------------------------------------->
-    <div class="function">
-        <!--<input type="button" name="add" value="添加" ng-click="add()" >-->
-        <input type="button" name="add" value="添加" open_dialog="#userDialog" ng-click="open()">
-        <input type="button" name="det" value="删除" ng-click="update()">
-        <input type="text" name="search" placeholder="搜索" >
-    </div>
-    <!------------------------------------The end---------------------------------------------->
-    <div class="contentCon">
-        <table class="table table-bordered">
-            <!--<caption>边框表格布局</caption>-->
-            <thead>
-            <tr>
-                <th>用户ID</th>
-                <th>登录名</th>
-                <th>姓名</th>
-                <th>手机号码</th>
-                <th>商业1</th>
-                <th>商业2</th>
-                <th>用户类型</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody class="userTable">
 
-            </tbody>
-        </table>
+<!-- 弹框 -->
+<div id="modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="color: #fff;background-color: #1abc9c;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">&times;</span></button>
+                <h7 class="modal-title"></h7>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>用户名</label>
+                    <input type="text" class="form-control" name="name"  ng-model="user.name" placeholder="用户名">
+                </div>
+                <div class="form-group">
+                    <label>昵称</label>
+                    <input type="text" class="form-control" name="nick_name" ng-model="user.nick_name" placeholder="昵称">
+                </div>
+                <div class="form-group">
+                    <label>第一次密码</label>
+                    <input type="password" class="form-control" name="password" ng-model="user.password" placeholder="第一次密码">
+                </div>
+                <div class="form-group">
+                    <label>第二次密码</label>
+                    <input type="password" class="form-control" name="two_password" ng-model="user.two_password" placeholder="第二次密码">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary " ng-click="save()">提交</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<!-- 列表数据-->
+<div >
+    <div  class="title"><p>{{title}}</p></div>
+    <div class="panel panel-green">
+        <div class="panel-heading">查询内容</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <select class="form-control select select-primary select-block">
+                        <option value="one">手机号码</option>
+                        <option value="three">用户名称</option>
+                    </select>
+
+                </div>
+                <div class="col-md-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" id="search-query-3">
+                        <span class="input-group-btn">
+                        <button type="submit" class="btn"><span class="fui-search"></span></button>
+                      </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-green" >
+        <div class="panel-heading"><i class="fa fa-align-justify" style="margin-right: 10px;"></i>数据列表
+            <div class="table_operation_btn">
+                <span class="table_operation_btn_span create"> <i class="fa fa-plus"></i>&nbsp;添加</span>
+                <span class="table_operation_btn_span removeAll"><i class="fa fa-minus"></i>&nbsp;批量删除</span>
+                <span class="table_operation_btn_span" style="display: none;"><i class="fa fa-pencil"></i>&nbsp;修改</span>
+                <span class="table_operation_btn_span refresh"><i class="fa  fa-refresh"></i>&nbsp;刷新</span>
+            </div>
+        </div>
+
+        <table id="user_table"></table>
+
+        <div style="float: right; display: none;">
+            <ul class="pagination">
+                <li class="previous">
+                    <a href="#" class="fui-arrow-left"></a>
+                </li>
+
+                <li class="active"><a>1</a></li>
+                <li><a>2</a></li>
+                <li><a>3</a></li>
+                <li><a>4</a></li>
+                <li><a>5</a></li>
+
+                <!-- Make dropdown appear above pagination -->
+                <li class="pagination-dropdown dropup">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fui-triangle-up"></i>
+                    </a>
+                    <!-- Dropdown menu -->
+                    <ul class="dropdown-menu">
+                        <li>
+                        <li><a href="">10–20</a></li>
+                        <li><a href="">20–30</a></li>
+                        <li><a href="">40–50</a></li>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="next">
+                    <a href="#" class="fui-arrow-right"></a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
+<script  src="plugs/flatui/application.js"></script>
+

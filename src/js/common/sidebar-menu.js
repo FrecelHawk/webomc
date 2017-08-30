@@ -51,7 +51,11 @@ $.sidebarMenu = function(menu) {
 
 
   $(menu).on('click','.child_node',function(){
-      $('.child_node').removeClass('child_active');
-      $(this).addClass('child_active');
+      if($(this).attr('name')!=""){
+        $('.child_node').removeClass('child_active');
+        $(this).addClass('child_active');
+        window.location.assign($(this).attr('url'));
+
+      }
   })
 };

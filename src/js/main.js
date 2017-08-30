@@ -1,11 +1,13 @@
 /**
  * Created by vitamin on 2017/8/24.
+ * JS配置加载入口
  */
 require.config({
     baseUrl: "",
     paths: {
         "jquery": "plugs/jquery/jquery-1.11.3",
         "jquery-ui":"plugs/jquery/jquery-ui",
+        "dateformat":"plugs/dateformat/dateFormat",
         "bootstrap":"plugs/bootstrap/js/bootstrap",
         "bootstrap-table":"plugs/bootstrap-table/js/bootstrap-table",
         "flatui":"plugs/flatui/flat-ui",
@@ -75,11 +77,14 @@ require.config({
 });
 
 
-require(['jquery', 'angular', 'jquery-ui', 'bootstrap', 'bootstrap-table', 'flatui', 'flat-appliction', 'ztree', 'angular-route', 'angular-sanitize', 'app', 'httpService', 'common', 'sidebar-menu', 'jquery-dialog', 'bootstrap-table-dir',  'userCtrl', 'roleCtrl', 'authCtrl','menuCtrl', 'router'], function ($, angular) {
+require(['jquery', 'angular', 'jquery-ui', 'dateformat','bootstrap', 'bootstrap-table', 'flatui', 'flat-appliction', 'ztree', 'angular-route', 'angular-sanitize', 'app', 'httpService', 'common', 'sidebar-menu', 'jquery-dialog', 'bootstrap-table-dir',  'userCtrl', 'roleCtrl', 'authCtrl','menuCtrl', 'router'], function ($, angular) {
+
 
     $(function () {
         angular.bootstrap(document, ["webapp"]);
-        $.sidebarMenu($('.sidebar-menu'));
+        console.log(angular);
+        $.sidebarMenu($('.sidebar'));
+
 
     })
 

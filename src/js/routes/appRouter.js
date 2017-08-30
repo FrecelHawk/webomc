@@ -1,5 +1,5 @@
 /**
- * 路由
+ * 路由器
  */
 define(['app'], function(app){
     return app.config(['$routeProvider',function($routeProvider) {
@@ -17,12 +17,10 @@ define(['app'], function(app){
                 controller:'authorityCtrl'
             })
             .when('/menu', {
-                template:'<h>Menu</h>',
+                template:'',
                 controller:'menuCtrl'
             })
             .otherwise('/menu');
-
-        //$locationProvider.html5Mode(true).hashPrefix('!');
 
     }])
 
